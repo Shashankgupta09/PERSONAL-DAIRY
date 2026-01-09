@@ -1,102 +1,62 @@
-# PERSONAL-DAIRY
-import java.util.*;
+📌 Project Description
 
-class DiaryEntry {
-    private String date;
-    private String note;
+The Personal Diary Management System is a console-based Java application that allows users to maintain personal diary entries.
+Users can add, view, search, and delete diary entries using a simple menu-driven interface.
 
-    public DiaryEntry(String date, String note) {
-        this.date = date;
-        this.note = note;
-    }
+This project demonstrates the use of Object-Oriented Programming concepts, Java Collections, and basic user input handling.
 
-    public String getDate() {
-        return date;
-    }
+🎯 Objectives
 
-    public String getNote() {
-        return note;
-    }
+To understand Object-Oriented Programming in Java
 
-    @Override
-    public String toString() {
-        return "Date: " + date + "\nNote: " + note + "\n-------------------";
-    }
-}
+To implement CRUD operations using ArrayList
 
-public class PersonalDiary {
-    private static ArrayList<DiaryEntry> diary = new ArrayList<>();
-    private static Scanner sc = new Scanner(System.in);
+To practice menu-driven console applications
 
-    public static void main(String[] args) {
-        int choice;
-        do {
-            System.out.println("\n=== PERSONAL DIARY ===");
-            System.out.println("1. Add Entry");
-            System.out.println("2. View All Entries");
-            System.out.println("3. Delete Entry");
-            System.out.println("4. Exit");
-            System.out.print("Enter your choice: ");
-            choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+To improve logical thinking and Java fundamentals
 
-            switch (choice) {
-                case 1:
-                    addEntry();
-                    break;
-                case 2:
-                    viewEntries();
-                    break;
-                case 3:
-                    deleteEntry();
-                    break;
-                case 4:
-                    System.out.println("Exiting Diary... Have a good day!");
-                    break;
-                default:
-                    System.out.println("Invalid choice! Try again.");
-            }
-        } while (choice != 4);
-    }
+🛠 Technologies Used
 
-    private static void addEntry() {
-        System.out.print("Enter date (dd-mm-yyyy): ");
-        String date = sc.nextLine();
-        System.out.print("Enter your note: ");
-        String note = sc.nextLine();
-        diary.add(new DiaryEntry(date, note));
-        System.out.println("✅ Entry added successfully!");
-    }
+Programming Language: Java
 
-    private static void viewEntries() {
-        if (diary.isEmpty()) {
-            System.out.println("No entries found.");
-            return;
-        }
-        System.out.println("\n--- All Diary Entries ---");
-        for (DiaryEntry entry : diary) {
-            System.out.println(entry);
-        }
-    }
+JDK Version: JDK 8 or above
 
-    private static void deleteEntry() {
-        System.out.print("Enter date of entry to delete (dd-mm-yyyy): ");
-        String date = sc.nextLine();
-        boolean found = false;
+IDE: VS Code / IntelliJ IDEA / Eclipse / NetBeans
 
-        Iterator<DiaryEntry> it = diary.iterator();
-        while (it.hasNext()) {
-            DiaryEntry entry = it.next();
-            if (entry.getDate().equals(date)) {
-                it.remove();
-                found = true;
-                System.out.println("🗑️ Entry deleted successfully!");
-                break;
-            }
-        }
+Concepts Used:
 
-        if (!found) {
-            System.out.println("No entry found for this date.");
-        }
-    }
-}
+Classes & Objects
+
+Encapsulation
+
+ArrayList
+
+Iterator
+
+Scanner
+
+⚙ Features
+
+Add diary entry with date and note
+
+View all diary entries
+
+Search diary entry by date
+
+Delete diary entry by date
+
+Menu-driven user interface
+
+Clean and simple console output
+
+🚀 Future Enhancements
+
+File handling for permanent storage
+
+Password protection
+
+GUI version using Swing or JavaFX
+
+Auto date using LocalDate
+
+Edit diary entry feature
